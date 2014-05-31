@@ -1,0 +1,46 @@
+
+R version 3.0.2 (2013-09-25) -- "Frisbee Sailing"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(wordcloud)
+Loading required package: Rcpp
+Loading required package: RColorBrewer
+> library(tm)
+> 
+> 
+> files<-list.files(pattern=".txt")
+> 
+> wordblock<-Corpus(DirSource(getwd()))
+Warning message:
+In readLines(y, encoding = x$Encoding) :
+  incomplete final line found on '/home/andrewdefries/Desktop/GitKindle/common_crawl_wet2_chernoff_world/WorkOnWet/result2.txt'
+> 
+> wordblock<-tm_map(wordblock, tolower)
+> 
+> #wordblock_no_stop <-tm_map(wordblock, removeWords, stopwords("english"))
+> 
+> png("wordcloud_result.png")
+> 
+> wordcloud(wordblock)
+> 
+> png("wordcloud_result_nostop.png")
+> 
+> wordcloud(wordblock_no_stop)
+Error in wordcloud(wordblock_no_stop) : 
+  object 'wordblock_no_stop' not found
+Execution halted
