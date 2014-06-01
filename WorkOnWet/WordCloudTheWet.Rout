@@ -29,9 +29,6 @@ Loading required package: RColorBrewer
 > files<-list.files(pattern=".txt")
 > 
 > wordblock<-Corpus(DirSource(getwd()))
-Warning message:
-In readLines(y, encoding = x$Encoding) :
-  incomplete final line found on '/home/andrewdefries/Desktop/GitKindle/common_crawl_wet2_chernoff_world/WorkOnWet/result2.txt'
 > 
 > wordblock<-tm_map(wordblock, tolower)
 > 
@@ -179,4 +176,4 @@ In readLines(y, encoding = x$Encoding) :
 > 
 > proc.time()
    user  system elapsed 
-  6.004   0.068   6.104 
+  2.272   0.056   2.333 
