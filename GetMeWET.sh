@@ -7,8 +7,8 @@
 #done
 #replace later for i in ListOfWarcs
 
-rm *.gz
-wget http://s3.amazonaws.com/aws-publicdatasets/common-crawl/crawl-data/CC-MAIN-2013-20/segments/1368711605892/wet/CC-MAIN-20130516134005-00099-ip-10-60-113-184.ec2.internal.warc.wet.gz
+##########rm *.gz
+##########wget http://s3.amazonaws.com/aws-publicdatasets/common-crawl/crawl-data/CC-MAIN-2013-20/segments/1368711605892/wet/CC-MAIN-20130516134005-00099-ip-10-60-113-184.ec2.internal.warc.wet.gz
 
 #prepare wet for text analysis]
 rm result.txt

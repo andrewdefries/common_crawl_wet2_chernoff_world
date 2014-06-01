@@ -100,6 +100,11 @@ neg = readLines("negative_words.txt")
 
 sentence<-wordblock
 
+
+###########
+##scores = laply(sentences, function(sentence, pos.words, neg.words) {
+
+
 sentence = gsub('[[:punct:]]', '', sentence)
 		sentence = gsub('[[:cntrl:]]', '', sentence)
 		sentence = gsub('\\d+', '', sentence)
@@ -133,8 +138,17 @@ pos.matches = match(words, pos.words)
 
 score = sum(pos.matches) - sum(neg.matches)
 
-return(score)
+##return(score)
+##}, pos.words, neg.words, .progress=.progress )
 
-scores.df = data.frame(score=scores, text=sentences)
+#	scores.df = data.frame(score=score.sentiment, text=sentence)
+#	return(scores.df)
 
+###############################################
+###############################################
+write.table(pos.matches, file="pos_matches.out")
+write.table(neg.matches, file="neg_matches.out")
+write.table(score, file="Overall_Score.txt")
 
+write.table(subset(words, pos.matches), file="PositiveWordList.txt")
+write.table(subset(words, neg.matches), file="NegativeWordList.txt")
